@@ -1,77 +1,97 @@
-# 🌍 AQI Prediction using SARIMA & LSTM
 
-## 📌 Project Overview
-This project focuses on **predicting Air Quality Index (AQI)** using **time series forecasting models**. The dataset is sourced from the **Central Pollution Control Board (CPCB)**, and the objective is to analyze historical AQI data, preprocess it, and apply machine learning techniques like **SARIMA** and **LSTM** for accurate AQI forecasting.
 
-🔗 **Data Source:** [Central Pollution Control Board (CPCB)](https://cpcb.nic.in/)
+# AQI Prediction using SARIMA & LSTM
 
----
-## 🎯 Features
-✅ Data cleaning and preprocessing for AQI analysis  
-✅ Time series forecasting using **SARIMA** and **LSTM**  
-✅ Visualization of AQI trends and seasonal variations  
-✅ Model evaluation and performance comparison  
+## Overview
+
+This project aims to forecast **Air Quality Index (AQI)** using two powerful approaches: the **traditional time series model SARIMA** and the **deep learning model LSTM**. The historical AQI data is sourced from the **Central Pollution Control Board (CPCB)** to understand pollution patterns and make forward-looking predictions.
+
+**Data Source:** [CPCB - Central Pollution Control Board](https://cpcb.nic.in/)
 
 ---
-## 🛠️ Technologies Used
-- 🐍 Python
-- 📊 Pandas, NumPy
-- 📉 Statsmodels (SARIMA), TensorFlow/Keras (LSTM)
-- 📈 Matplotlib, Seaborn, Plotly
+
+## Key Features
+
+- Time series forecasting using SARIMA and LSTM  
+- Preprocessing of raw AQI data and engineered time-based features  
+- Seasonal and long-term AQI trend analysis  
+- Visualization and comparative model evaluation  
 
 ---
-## 🔍 Techniques Used
 
-### 1️⃣ Data Cleaning & Preprocessing
-🛠️ **Handling Missing Values:** Used **Spline Interpolation** to fill missing AQI values smoothly  
-📊 **Feature Engineering:** Extracted useful features from timestamps, such as month, day, and hour  
-📆 **Datetime Conversion:** Converted date columns into proper datetime format for time series analysis  
-📉 **Outlier Removal:** Identified and removed anomalies in AQI values using statistical methods  
-📊 **Scaling & Normalization:** Standardized AQI values for improved model performance  
+## Tech Stack
 
-### 2️⃣ Time Series Forecasting Models
-
-#### **SARIMA (Seasonal AutoRegressive Integrated Moving Average)**
-🔄 Applied **SARIMA** to capture seasonality and trends in AQI data  
-📊 Used **ACF & PACF** plots to determine optimal SARIMA parameters  
-📉 Differenced data to ensure stationarity for accurate forecasting  
-📈 Forecasted AQI for future time periods using SARIMA's seasonal components  
-
-#### **LSTM (Long Short-Term Memory Networks)**
-🤖 Built an **LSTM-based deep learning model** to learn AQI patterns from historical data  
-📊 Applied **sliding window technique** to prepare time series sequences for training  
-🧠 Used **multiple LSTM layers** to capture complex temporal dependencies  
-📉 Compared LSTM predictions with SARIMA to evaluate deep learning model effectiveness  
-
-### 3️⃣ Model Evaluation & Insights
-📊 **Performance Metrics:** Evaluated forecasting accuracy using RMSE, MAE, and MAPE  
-📌 **Trend Analysis:** Identified seasonal, monthly, and yearly AQI variations  
-📈 **Model Comparison:** Compared **SARIMA vs. LSTM** performance to determine the best forecasting model  
+| Category         | Tools and Libraries                        |
+|------------------|---------------------------------------------|
+| Programming      | Python                                      |
+| Data Processing  | Pandas, NumPy                               |
+| Time Series      | Statsmodels (SARIMA), TensorFlow/Keras (LSTM) |
+| Visualization    | Matplotlib, Seaborn, Plotly                |
 
 ---
-## 🚀 How to Use
-1️⃣ Load the dataset from **CPCB**  
-2️⃣ Run the **data cleaning notebook** to preprocess the AQI data, including handling missing values and feature engineering  
-3️⃣ Execute the **SARIMA model notebook** to generate AQI forecasts using classical time series analysis  
-4️⃣ Run the **LSTM model notebook** to apply deep learning techniques for AQI prediction  
-5️⃣ Compare the results from both models and analyze forecasting accuracy  
+
+## Project Workflow
+
+### 1. Data Preprocessing
+
+- **Missing Data Handling:** Spline interpolation was used to fill missing AQI values.  
+- **Date Feature Extraction:** Month, day, and hour were extracted from datetime columns.  
+- **Normalization:** Applied scaling techniques for LSTM input.  
+- **Outlier Detection:** Used statistical thresholds to identify and remove anomalies.
+
+### 2. Time Series Modeling
+
+#### SARIMA
+
+- Designed to capture trend, seasonality, and noise.
+- Utilized ACF and PACF plots for parameter selection.
+- Differencing used to ensure data stationarity.
+- Generated AQI forecasts based on seasonal trends.
+
+#### LSTM
+
+- Built using stacked LSTM layers to capture temporal dependencies.
+- Employed a sliding window approach to create sequences.
+- Trained on historical AQI data and compared results with SARIMA.
+
+### 3. Model Evaluation
+
+- **Metrics Used:** RMSE (Root Mean Squared Error), MAE (Mean Absolute Error), and MAPE (Mean Absolute Percentage Error).  
+- **Insights Extracted:** Identified AQI variations across different seasons and timeframes.  
+- **Model Comparison:** Assessed forecasting capabilities of both SARIMA and LSTM to determine effectiveness.
 
 ---
-## 🔮 Future Enhancements
-📢 **Incorporate Additional Factors:** Use weather, traffic, and industrial emissions data for improved predictions  
-📊 **Hyperparameter Optimization:** Tune SARIMA and LSTM models for enhanced accuracy  
-📡 **Real-time AQI Prediction:** Deploy as an API for live air quality forecasting  
-🛰️ **Integration with IoT Sensors:** Collect real-time pollution data from smart sensors to improve predictions  
+
+## How to Run
+
+1. Download the AQI dataset from the [CPCB website](https://cpcb.nic.in/).
+2. Open and run `data_preprocessing.ipynb` to clean and prepare the data.
+3. Run `sarima_model.ipynb` to apply SARIMA for forecasting.
+4. Run `lstm_model.ipynb` to use LSTM for AQI prediction.
+5. Compare outputs from both models and visualize results.
 
 ---
-## 📌 Conclusion
-This project provides a **data-driven approach to AQI forecasting** using **SARIMA and LSTM models**. By leveraging time series analysis and deep learning, we can predict air quality trends, aiding in pollution control measures and policy decisions.
+
+## Future Enhancements
+
+- Integrate additional variables such as weather, traffic, and industrial emission data for improved forecasting.  
+- Optimize model parameters using grid/random search.  
+- Develop and deploy an API for real-time AQI prediction.  
+- Connect the model to live sensor networks for dynamic updates.
 
 ---
-## 📚 References
-- CPCB AQI Data: [cpcb.nic.in](https://cpcb.nic.in/)
-- Pandas: [pandas.pydata.org](https://pandas.pydata.org/)
-- Matplotlib: [matplotlib.org](https://matplotlib.org/)
-- Statsmodels (SARIMA): [statsmodels.org](https://www.statsmodels.org/)
-- TensorFlow/Keras (LSTM): [tensorflow.org](https://www.tensorflow.org/)
+
+## Conclusion
+
+This project delivers a dual-model framework for AQI forecasting using both traditional and deep learning approaches. It serves as a foundation for building more advanced, real-time air quality monitoring systems that support sustainable environmental policies and urban development planning.
+
+---
+
+## References
+
+- [CPCB AQI Data](https://cpcb.nic.in/)
+- [Pandas Documentation](https://pandas.pydata.org/)
+- [Matplotlib Documentation](https://matplotlib.org/)
+- [Statsmodels - SARIMA](https://www.statsmodels.org/)
+- [TensorFlow/Keras](https://www.tensorflow.org/)
 
